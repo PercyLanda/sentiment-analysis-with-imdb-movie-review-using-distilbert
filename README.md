@@ -1,92 +1,51 @@
-# Sentiment Analysis with IMDb Movie Reviews using DistilBERT
+# Sentiment Analysis with IMDb Reviews using DistilBERT
 
-A standalone transformer-based sentiment analysis project using DistilBERT on the IMDb dataset.
+A transformer-based sentiment analysis project built for production-style reproducibility and portfolio clarity.
 
-Dataset: [stanfordnlp/imdb](https://huggingface.co/datasets/stanfordnlp/imdb)
+## 1-Minute Overview
 
-## What It Does
+- **Model:** `distilbert-base-uncased`
+- **Task:** Binary sentiment classification (positive/negative)
+- **Dataset:** [stanfordnlp/imdb](https://huggingface.co/datasets/stanfordnlp/imdb)
+- **Best tracked run:**
+  - Train samples: `22,500`
+  - Validation samples: `2,500`
+  - Test samples: `5,000`
+  - Epochs: `2`
+  - Test Accuracy: `0.9064`
+  - Test F1: `0.9046`
+- **Includes:** training, prediction (one-shot + interactive), tests, and validation checks.
 
-- Trains `distilbert-base-uncased` for binary sentiment classification.
-- Evaluates on validation and test sets.
-- Saves model and metrics artifacts.
-- Supports one-shot and interactive CLI inference.
-- Includes automated tests and artifact validation checks.
-
-## Project Structure
-
-```text
-sentiment-analysis-with-imdb-movie-review-using-DistilBERT/
-  artifacts/
-    distilbert/
-      model/
-      checkpoints/
-      metrics.json
-  scripts/
-    train_distilbert.py
-    predict_distilbert.py
-    validate_model.py
-  tests/
-    test_predict_distilbert.py
-  requirements.txt
-  README.md
-```
-
-## Installation
+## Quick Start
 
 ```bash
-git clone https://github.com/PercyLanda/sentiment-analysis-with-imdb-movie-review-using-DistilBERT.git
-cd sentiment-analysis-with-imdb-movie-review-using-DistilBERT
+git clone https://github.com/PercyLanda/sentiment-analysis-with-imdb-movie-review-using-distilbert.git
+cd sentiment-analysis-with-imdb-movie-review-using-distilbert
 python3.12 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Usage
-
-### 1) Train DistilBERT
+## Run
 
 ```bash
+# Train
 python scripts/train_distilbert.py
-```
 
-### 2) Run tests
-
-```bash
+# Test code behavior
 pytest -q
-```
 
-### 3) Validate artifacts
-
-```bash
+# Validate trained artifacts + thresholds
 python scripts/validate_model.py
-```
 
-### 4) Predict
-
-One-shot:
-
-```bash
-python scripts/predict_distilbert.py --text "Amazing movie with great performances."
-```
-
-Interactive:
-
-```bash
+# Inference (interactive)
 python scripts/predict_distilbert.py --interactive
 ```
 
-Type `exit` to quit interactive mode.
+## Docs
 
-## Recommended Order: Testing vs Validation
-
-- **Testing first**: checks code behavior.
-- **Validation second**: checks trained artifacts and metric thresholds.
-
-## Notes
-
-- DistilBERT training is compute-heavy; default sample limits are set for a practical local run.
-- You can increase `--max-train-samples` and epochs for stronger results.
-- Model is trained on English IMDb data and may underperform on non-English text.
+- [How It Works](docs/how-it-works.md)
+- [Process and Experiment Notes](docs/PROCESS.md)
 
 ## Author
 
