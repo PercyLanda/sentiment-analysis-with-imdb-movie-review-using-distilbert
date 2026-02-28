@@ -32,8 +32,8 @@ Effective split after internal validation split:
 
 ## Best Run Metrics
 - Validation F1: `0.9094`
-- Test Accuracy: `0.9064`
-- Test F1: `0.9046`
+- Test Accuracy: `0.9062`
+- Test F1: `0.9048`
 
 ## Runtime Context
 - Machine: MacBook Pro 14-inch (Nov 2024)

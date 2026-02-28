@@ -12,8 +12,8 @@ A transformer-based sentiment analysis project built for production-style reprod
   - Validation samples: `2,500`
   - Test samples: `5,000`
   - Epochs: `2`
-  - Test Accuracy: `0.9064`
-  - Test F1: `0.9046`
+  - Test Accuracy: `0.9062`
+  - Test F1: `0.9048`
 - **Includes:** training, prediction (one-shot + interactive), tests, and validation checks.
 
 ## Quick Start
